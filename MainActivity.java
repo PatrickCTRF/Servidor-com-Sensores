@@ -14,6 +14,8 @@ public class MainActivity extends Activity {
     EditText editTextAddress, editTextPort;
     Button buttonConnect, buttonClear;
 
+    final Bateria info = new Bateria(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +31,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View arg0) {
-                Client myClient = new Client(editTextAddress.getText().toString(), Integer.parseInt(editTextPort.getText().toString()), response);
+                Client myClient = new Client(editTextAddress.getText().toString(), Integer.parseInt(editTextPort.getText().toString()), response, info);
                 myClient.execute();
             }
         });
