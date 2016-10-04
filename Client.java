@@ -50,7 +50,7 @@ public class Client extends AsyncTask<Void, Void, Void> {
             get[3] = (byte) '\r';
             get[4] = (byte) '\n';
 
-            socket.getOutputStream().write(info.getInfo().getBytes());
+            socket.getOutputStream().write((info.getInfo() + "\nFIM\n").getBytes());
 
             //while ((bytesRead = inputStream.readLine()) != null) {
                 bytesRead = inputStream.readLine();
